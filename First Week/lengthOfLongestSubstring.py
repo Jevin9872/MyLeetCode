@@ -4,18 +4,26 @@ class Solution:
         if not s:
             return 0
         A = ''
-        B = ''
         Max = 0
-        for element in s:
-            A = A + element
-            B = s.lstrip(A)
-            for element2 in A:
-                if element2 in B:
+        left = 0
+        right = 0
+        while(right < len(s)):
+            if left == right:
+                A = A + s[right]
+                right = right + 1
+                continue
+            if s[right] not in A:
+                A = A + s[right]
+                if Max < len(A):
                     Max = len(A)
-                    continue
-
+                right = right + 1
+            else:
+                A = A.lstrip(s[left])
+                left = left + 1
         return Max
 
-s = "abcabcbb"
+
+
+s = "abca"
 S = Solution()
 print(S.lengthOfLongestSubstring(s))
