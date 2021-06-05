@@ -11,6 +11,8 @@ class Solution:
             if left == right:
                 A = A + s[right]
                 right = right + 1
+                if Max < len(A):
+                    Max = len(A)
                 continue
             if s[right] not in A:
                 A = A + s[right]
@@ -24,6 +26,6 @@ class Solution:
 
 
 
-s = "abca"
+s = "bbbbb"
 S = Solution()
 print(S.lengthOfLongestSubstring(s))
