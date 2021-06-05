@@ -8,12 +8,12 @@ class Solution:
         Max = 0
         for element in s:
             A = A + element
-            B = s.lstrip()
+            B = s.lstrip(A)
             for element2 in A:
                 if element2 in B:
                     Max = len(A)
-                else:
                     continue
+
         return Max
 
 s = "abcabcbb"
